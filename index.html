@@ -32,7 +32,7 @@
     function roundRobin(list, key) {
       if (!list.length) return null;
       try {
-        const i = Number(sessionStorage.getItem(key) || "0");
+       const i = Math.floor(Math.random() * list.length);
         const next = list[i % list.length];
         sessionStorage.setItem(key, String(i + 1));
         return next;
